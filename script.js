@@ -8,7 +8,7 @@ function displayInput() {
 
 fetch('https://ntfy.sh/did_you_open', {
   method: 'POST', // PUT works too
-  body: 'hello there!'
+  body: 'hello there Natalie!'
 })
 
 
@@ -16,6 +16,7 @@ const yesButton = document.getElementById('yesbutton');
 const noButton = document.getElementById('nobutton');
 const mane_input = document.getElementById('name-input');
 const hello = document.getElementById('hello');
+wink_emoji = document.getElementById('wink-emoji');
 const kobiety = document.getElementById('kobiety-container');
 const video = document.getElementById('video');
 const start_button = document.getElementById('start-button');
@@ -62,10 +63,12 @@ function slideInHello() {
   }, 9500);
 
   setTimeout(() => {
+    video.pause()
+
     video.style.animation = 'slide-out 2.4s';
     fetch('https://ntfy.sh/did_you_open', {
       method: 'POST', // PUT works too
-  body: 'just after the videog'
+  body: 'just after the video'
 })
   }, 16000);
 
@@ -73,17 +76,30 @@ function slideInHello() {
     video.style.display = 'none';
   }, 18000);
 
+  setTimeout(() => {
+    wink_emoji.style.display = 'flex';
+    wink_emoji.style.animation = 'slide-in 3s';
+  }, 17000);
+
+  setTimeout(() => {
+    wink_emoji.style.animation = 'jump 2.4s infinite';
+  }, 19500);
+
+  setTimeout(() => {
+    video.style.animation = 'slide-out 2.4s';
+    fetch('https://ntfy.sh/did_you_open', {
+      method: 'POST', // PUT works too
+  body: 'the end!'
+})
 
 
-  
-
-
+}, 20000);
 }
 
 start_button.addEventListener('click', function () {
   fetch('https://ntfy.sh/did_you_open', {
     method: 'POST', // PUT works too
-    body: '__clicked yes!!'
+    body: ' Natalie clicked yes!!'
   })
 
   start_button.style.animation = 'dissapear 2s';
@@ -94,13 +110,4 @@ start_button.addEventListener('click', function () {
     slideInHello()
   }, 2100);
 });
-
-
-
-
-
-
-
-
-
 
